@@ -1,6 +1,5 @@
 # AI Information Retrieval Agent
 
-![GitHub](https://img.shields.io/github/license/yourusername/ai-information-retrieval)
 ![Python](https://img.shields.io/badge/python-v3.8+-blue.svg)
 ![Streamlit](https://img.shields.io/badge/streamlit-v1.24+-red.svg)
 
