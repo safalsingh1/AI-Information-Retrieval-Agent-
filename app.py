@@ -9,10 +9,8 @@ import requests
 import time
 import google.generativeai as genai
 
-# Load environment variables
-load_dotenv()
 
-# Streamlit App Title
+load_dotenv()
 st.title("AI Agent for Information Retrieval")
 
 # Section for CSV File Upload
@@ -22,7 +20,6 @@ uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
 main_column = None
 data = None
 
-# Display preview and select column
 if uploaded_file is not None:
     # Read the CSV file
     data = pd.read_csv(uploaded_file)
@@ -122,10 +119,6 @@ if data is not None and main_column:
 elif google_sheet_data is not None and gs_main_column:
     current_data = google_sheet_data
     current_main_column = gs_main_column
-#########################################################
-# [Previous imports remain the same...]
-
-# [Previous code until the Custom Query Input section remains the same...]
 
 if current_data is not None and current_main_column:
     # Add a search type selector
@@ -164,7 +157,7 @@ if current_data is not None and current_main_column:
         # Section for Performing Web Search
         st.subheader("Perform Web Search")
 
-        # Input for SerpAPI Key
+
         serpapi_key = st.text_input("Enter your SerpAPI Key", type="password", value=os.getenv("SERPAPI_KEY", ""))
 
         if serpapi_key:
