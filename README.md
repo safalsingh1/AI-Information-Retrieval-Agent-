@@ -152,7 +152,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## 📧 Contact
 
-Your Name - safalsingh@gmail.com](mailto:your.email@example.com)
+Your Name - safalsingh@gmail.com
 
 
 ---
