@@ -1,81 +1,166 @@
-# AI Agent for Information Retrieval
+# AI Information Retrieval Agent
 
-An AI-powered tool designed for flexible and efficient information retrieval. This tool allows users to upload a CSV file or connect through the Google Sheets API to gather specific data from online sources. With the ability to select specific columns and choose between predefined searches or custom prompts, this tool offers a versatile solution for retrieving, parsing, and downloading structured information.
+![GitHub](https://img.shields.io/github/license/yourusername/ai-information-retrieval)
+![Python](https://img.shields.io/badge/python-v3.8+-blue.svg)
+![Streamlit](https://img.shields.io/badge/streamlit-v1.24+-red.svg)
 
-## Table of Contents
-1. [Project Overview](#project-overview)
-2. [Key Features](#key-features)
-3. [Setup Instructions](#setup-instructions)
-4. [Usage Guide](#usage-guide)
-5. [Technologies Used](#technologies-used)
-6. [API and Tool References](#api-and-tool-references)
-7. [License](#license)
+## Overview
 
-## Project Overview
-This project simplifies data retrieval by leveraging AI to search the web and extract relevant information. After uploading a CSV file or connecting through the Google Sheets API, users can specify a column to retrieve information about and either choose from predefined search options or provide a custom prompt for more personalized results. The results are then parsed into a structured table format, which can be downloaded in Excel or CSV formats.
+The AI Information Retrieval Agent is a powerful tool that combines data processing, web scraping, and AI capabilities to extract and analyze information from structured data sources. Built with Streamlit, it offers an intuitive interface for users to process data from CSV files or Google Sheets.
 
-## Key Features
-- **File Upload or Google Sheets Integration**: Users can upload a CSV or connect via Google Sheets API.
-- **Column Selection and Search Customization**: Choose a column to search from and specify information to retrieve via preset options or a custom prompt.
-- **Automated Web Search**: Utilizes SerpAPI to gather data for each row in the selected column.
-- **Data Parsing with Google Gemini**: Results are parsed into a structured table for easy analysis.
-- **Downloadable Output**: Data can be downloaded as an Excel or CSV file.
+---
 
-## Setup Instructions
-Follow these steps to set up the project locally:
+## ✨ Key Features
 
-### Prerequisites
-1. **Python**: Ensure Python 3.8+ is installed.
-2. **API Keys**: Obtain your API keys for SerpAPI and Google Gemini (and Google Sheets if using the Sheets integration).
-3. **Libraries**: The required Python packages are listed in `requirements.txt`.
+* 📂 **Data Source Integration**
+  * CSV file upload support
+  * Google Sheets API integration
+  * Dynamic column selection
 
-### Installation Steps
-1. **Clone the Repository**:
+* 🔍 **Search Capabilities**
+  * Direct search functionality
+  * Custom query support
+  * Web scraping via SerpAPI
+
+* 🤖 **AI Processing**
+  * Data parsing with Google Gemini
+  * Automated table generation
+  * Export to CSV/Excel
+
+---
+
+## 🛠️ Installation
+
+1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/ai-agent-info-retrieval.git
-   cd ai-agent-info-retrieval
-Install Dependencies:
+   git clone https://github.com/yourusername/ai-information-retrieval.git
+   cd ai-information-retrieval
+   ```
 
-bash
-Copy code
-pip install -r requirements.txt
-Configure API Keys:
+2. **Set up virtual environment**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # Windows: venv\Scripts\activate
+   ```
 
-Create a .env file in the project root directory and add your API keys:
-env
-Copy code
-SERPAPI_KEY=your_serpapi_key
-GOOGLE_GEMINI_KEY=your_google_gemini_key
-GOOGLE_SHEETS_KEY=your_google_sheets_key
-Usage Guide
-Start the Application:
+3. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-bash
-Copy code
+4. **Configure environment variables**
+   ```bash
+   cp .env.example .env
+   # Edit .env with your API keys
+   ```
+
+---
+
+## 📁 Project Structure
+
+```
+ai-information-retrieval/
+├── app.py
+├── requirements.txt
+├── .env.example
+└── README.md
+```
+
+---
+
+## 🚀 Usage Guide
+
+### Starting the Application
+
+```bash
 streamlit run app.py
-This will launch the application locally via Streamlit.
+```
 
-Upload or Connect Data:
+### Basic Workflow
 
-Upload a CSV file directly or connect through the Google Sheets API.
-Select Column and Choose Search Option:
+1. **Data Upload**
+   * Select data source (CSV/Google Sheets)
+   * Choose target column
 
-Use the dropdown to select a column for information retrieval.
-Choose from predefined search options or enter a custom prompt for targeted results.
-Retrieve and Parse Results:
+2. **Search Configuration**
+   * Select search type
+   * Enter custom query (if needed)
 
-Click Search Results to begin data retrieval using SerpAPI.
-Click Parse with LLM to format the results into a structured table using Google Gemini.
-Download the Output:
+3. **Processing**
+   * Click "Search" for web results
+   * Use "Parse with LLM" for structured data
+   * Download results
 
-Download the parsed results as an Excel or CSV file.
-Technologies Used
-Python: Programming language used to build the application.
-Streamlit: Framework for building the user interface.
-SerpAPI: API for performing web searches and retrieving data.
-Google Gemini: Tool for parsing and structuring the retrieved search results.
-Google Sheets API (optional): For direct data input from Google Sheets.
-API and Tool References
-SerpAPI: https://serpapi.com/
-Google Gemini: https://cloud.google.com/gemini
-Google Sheets API: https://developers.google.com/sheets/api
+## ⚙️ Configuration
+
+### Required API Keys
+
+```env
+SERPAPI_API_KEY=your_key_here
+GEMINI_API_KEY=your_key_here
+GOOGLE_SHEETS_CREDENTIALS=path_to_credentials.json
+```
+
+### Google Sheets Setup
+
+1. Create GCP project
+2. Enable Sheets API
+3. Create service account
+4. Download credentials
+
+### SerpAPI Setup
+
+1. Register at serpapi.com
+2. Get API key
+3. Add to .env file
+
+---
+
+## 📚 Dependencies
+
+* `streamlit>=1.24.0`
+* `pandas>=1.5.0`
+* `google-api-python-client>=2.0.0`
+* `serpapi-python>=1.0.0`
+* `google-generativeai>=0.1.0`
+
+---
+
+## 🤝 Contributing
+
+1. Fork repository
+2. Create feature branch
+   ```bash
+   git checkout -b feature/NewFeature
+   ```
+3. Commit changes
+   ```bash
+   git commit -m 'Add NewFeature'
+   ```
+4. Push to branch
+   ```bash
+   git push origin feature/NewFeature
+   ```
+5. Open Pull Request
+
+---
+
+## 📝 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+---
+
+## 📧 Contact
+
+Your Name - safalsingh@gmail.com](mailto:your.email@example.com)
+
+
+---
+
+## 🙏 Acknowledgments
+
+* [Streamlit](https://streamlit.io/)
+* [SerpAPI](https://serpapi.com)
+* [Google Cloud Platform](https://cloud.google.com)
+* [Google Gemini](https://ai.google.dev/)
